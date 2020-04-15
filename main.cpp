@@ -7,20 +7,20 @@ using namespace std;
 int main ()
 {
     setlocale(LC_ALL,"portuguese");
+
     int N;
     menu();
+    imprime_espaco(39);
     cout << "Escolha o número da função para testar: ";
     cin >> N;
 
     while (N!=0)
     {
-        system ("cls");
+        limpa_tela();
 
         if(N==1)
         {
-            linha('*', 120);
-            caixa_com_texto_centralizado ("01. Desenha Retângulo", 120, '*');
-            linha('*', 120);
+            caixa_com_texto_centralizado ("01. Desenha Retângulo", 120, '*', '*');
             char Contorno, Preenche;
             int L, C;
             cout << "Digite o caractere de contorno: ";
@@ -37,9 +37,7 @@ int main ()
 
         else if (N==2)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("02. Volume Esfera", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("02. Volume Esfera", 120, '*', '*');
            double R;
            cout << "Digite o raio da esfera:\n";
            cin >> R;
@@ -48,9 +46,7 @@ int main ()
 
         else if (N==3)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("03. Fatorial", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("03. Fatorial", 120, '*', '*');
            int Num;
 
            cout << "Digite um número inteiro: ";
@@ -61,9 +57,7 @@ int main ()
 
         else if (N==4)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("04. Fibonacci", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("04. Fibonacci", 120, '*', '*');
            int Termo;
            cout << "Digite um termo da série de Fibonacci: ";
            cin >> Termo;
@@ -73,9 +67,7 @@ int main ()
 
         else if (N==5)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("05. Número Regular", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("05. Número Regular", 120, '*', '*');
            int Number;
 
            cout << "Digite um número inteiro: ";
@@ -93,9 +85,7 @@ int main ()
 
         else if (N==6)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("06. Combinações", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("06. Combinações", 120, '*', '*');
            int N, P;
            cout << "Digite o valor de N: ";
            cin >> N;
@@ -108,9 +98,7 @@ int main ()
 
         else if (N==7)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("07. Palíndromo", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("07. Palíndromo", 120, '*', '*');
            string T;
 
            cin.ignore();
@@ -129,9 +117,7 @@ int main ()
 
         else if (N==8)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("08. Converte para minúsculas", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("08. Converte para minúsculas", 120, '*', '*');
 
            string Maiuscula;
 
@@ -145,9 +131,7 @@ int main ()
 
         else if (N==9)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("09. Converte para maiúsculas", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("09. Converte para maiúsculas", 120, '*', '*');
 
            string Minuscula;
 
@@ -161,9 +145,7 @@ int main ()
 
         else if (N==10)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("10. Centralizar texto", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("10. Centralizar texto", 120, '*', '*');
 
            string S;
            unsigned int N;
@@ -177,16 +159,12 @@ int main ()
            cout << "Digite o caractere que será o contorno da caixa de texto: ";
            cin >> C;
            cout << endl;
-           linha (C,N);
-           caixa_com_texto_centralizado(S, N, C);
-           linha (C, N);
+           caixa_com_texto_centralizado(S, N, C, C);
         }
 
         else if (N==11)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("11. Ordenar três números", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("11. Ordenar três números", 120, '*', '*');
 
            int A, B, C;
 
@@ -201,9 +179,7 @@ int main ()
 
         else if (N==12)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("12. Tamanho string", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("12. Tamanho string", 120, '*', '*');
 
            char Q[100];
 
@@ -216,9 +192,7 @@ int main ()
 
         else if (N==13)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("13. Compara string", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("13. Compara string", 120, '*', '*');
 
            char A[100], B[100];
 
@@ -245,9 +219,7 @@ int main ()
 
         else if (N==14)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("14. Converte string para int", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("14. Converte string para int", 120, '*', '*');
            int t;
            char X[100];
 
@@ -268,9 +240,7 @@ int main ()
 
         else if (N==15)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("15. Remove espaços em branco início e fim", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("15. Remove espaços em branco início e fim", 120, '*', '*');
 
            char X[300];
            cin.ignore();
@@ -285,9 +255,7 @@ int main ()
 
         else if (N==16)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("16. Quebrar string", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("16. Quebrar string", 120, '*', '*');
 
            char X[500], separador;
 
@@ -314,9 +282,7 @@ int main ()
 
         else if (N==17)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("17. Buscar na string", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("17. Buscar na string", 120, '*', '*');
 
            char X[100], Y[100];
            cin.ignore();
@@ -339,9 +305,7 @@ int main ()
 
         else if (N==18)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("18. Soma números gigantes", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("18. Soma números gigantes", 120, '*', '*');
 
            char X[100], Y[100];
            cin.ignore();
@@ -360,9 +324,7 @@ int main ()
 
         else if (N==19)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("19. Maior e menor do vetor", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("19. Maior e menor do vetor", 120, '*', '*');
 
            int Tamanho, Menor=0, Maior=0;
            cout << "Digite o tamanho do Vetor:\n";
@@ -387,9 +349,7 @@ int main ()
 
         else if (N==20)
         {
-           linha('*', 120);
-           caixa_com_texto_centralizado ("20. Soma matriz", 120, '*');
-           linha('*', 120);
+           caixa_com_texto_centralizado ("20. Soma matriz", 120, '*', '*');
 
            int l, c;
            cout << "PARA SOMAR DUAS MATRIZES, É NECESSÁRIO QUE TENHAM A MESMA ORDEM, OU SEJA, MESMA QUANTIDADE DE LINHAS E COLUNAS.\n";
@@ -400,10 +360,8 @@ int main ()
 
            while (l==0  || c==0)
            {
-               system("cls");
-               linha('*', 120);
-               caixa_com_texto_centralizado ("20. Soma matriz", 120, '*');
-               linha('*', 120);
+               limpa_tela();
+               caixa_com_texto_centralizado ("20. Soma matriz", 120, '*', '*');
                cout << "Não existe matriz de linha ou coluna igual a ZERO;\n";
                cout << "\nDigite novamente a quantidade de linhas das matrizes A e B:\n";
                cin >> l;
@@ -429,14 +387,16 @@ int main ()
 
         cout << endl;
         menu();
-        linha('.', 120);
-        caixa_com_texto_centralizado ("Digite 0 para encerrar o programa", 120, '.');
-        caixa_com_texto_centralizado ("OU", 120, '.');
-        linha('.', 120);
-        caixa_com_texto_centralizado ("Escolha o número da função para testar:", 120, ' ');
+
+        cout << endl;
+        caixa_ao_redor_do_texto ('*', "Digite 0 para encerrar o programa", 120);
+        caixa_ao_redor_do_texto ('*', "OU", 120);
+        imprime_espaco(39);
+        cout << "Escolha o número da função para testar: ";
         cin >> N;
     }
 
+    cout << endl;
     mensagem_de_despedida();
 
     return 0;

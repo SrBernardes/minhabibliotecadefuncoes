@@ -4,10 +4,11 @@
 #include <iostream>
 using namespace std;
 
+void limpa_tela();
 void imprime_espaco (int TAM);
 void menu ();
 void desenha_retangulo(char X, char Y, int L, int C);
-void caixa_com_texto_centralizado (string S, int N, char C);
+void caixa_com_texto_centralizado (string S, int N, char C, char Laterais);
 double volume_esfera (double R);
 int fatorial (int Num);
 int fibonacci (int Termo);
@@ -36,5 +37,6 @@ void ler_matriz (int l, int c, int **Matriz);
 int **cria_matriz (int l, int c);
 void mensagem_de_despedida();
 void deleta_matriz_char (int l, char **Matriz);
+void caixa_ao_redor_do_texto(char Contorno, string T, int TamLinha);
 
 #endif // MINHABIBLIOTECADEFUNCOES_H

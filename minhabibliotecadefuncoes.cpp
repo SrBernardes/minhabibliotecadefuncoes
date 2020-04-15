@@ -8,12 +8,20 @@ void imprime_espaco (int TAM)
     }
 }
 
+void caixa_ao_redor_do_texto(char Contorno, string T, int TamLinha)
+{
+    int TAM = T.size();
+
+    imprime_espaco((TamLinha - (TAM+2))/2);
+    linha(Contorno, TAM+2);
+    imprime_espaco((TamLinha - (TAM+2))/2);
+    cout << Contorno << T << Contorno << endl;
+    imprime_espaco((TamLinha - (TAM+2))/2);
+    linha(Contorno, TAM+2);
+}
 void menu ()
 {
-    linha('_',120);
-    imprime_espaco(49);
-    cout << "MENU DAS FUNÇÕES" << endl;
-    linha('_',120);
+    caixa_com_texto_centralizado ("MENU DAS FUNÇÕES", 120, '_', '*');
     cout << endl;
     cout << "(01) Desenha retângulo";
     imprime_espaco(55);
@@ -67,13 +75,14 @@ void desenha_retangulo(char X, char Y, int L, int C)
     }
 }
 
-void caixa_com_texto_centralizado (string S, int N, char C)
+void caixa_com_texto_centralizado (string S, int N, char C, char Laterais)
 {
+    linha (C, N);
     int TAM = S.size();
 
     int P = (N-TAM-2)/2;
 
-    cout << C;
+    cout << Laterais;
 
     if (TAM>N-2)
     {
@@ -97,7 +106,8 @@ void caixa_com_texto_centralizado (string S, int N, char C)
         imprime_espaco(P);
     }
 
-    cout << C << endl;
+    cout << Laterais << endl;
+    linha (C, N);
 }
 
 double volume_esfera (double R)
@@ -595,11 +605,18 @@ void imprime_matriz (int l, int c, int **Matriz)
 
 void mensagem_de_despedida()
 {
-    linha ('*', 120);
-    caixa_com_texto_centralizado("MUITO OBRIGADO POR TESTAR AS FUNÇÕES!!!", 120, '*');
-    caixa_com_texto_centralizado("Aluno: Samuel Bernardes de Souza", 120, '*');
-    caixa_com_texto_centralizado("Matrícula: 20192002800346", 120, '*');
-    caixa_com_texto_centralizado(" ", 120, '*');
-    caixa_com_texto_centralizado("FIM.", 120, '*');
-    linha ('*', 120);
+    caixa_ao_redor_do_texto('x'," MUITO OBRIGADO POR TESTAR AS FUNÇÕES!!! ", 120);
+    caixa_ao_redor_do_texto('x', " Aluno: Samuel Bernardes de Souza ", 120);
+    caixa_ao_redor_do_texto('x'," Matrícula: 20192002800346 ", 120);
+    cout << endl;
+    caixa_ao_redor_do_texto('x', " FIM. ", 120);
+}
+
+void limpa_tela()
+{
+    #ifdef __linux__
+        system("cls");
+    #else
+        system("cls");
+    #endif
 }

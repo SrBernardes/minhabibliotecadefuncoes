@@ -10,8 +10,11 @@ void imprime_espaco (int TAM)
 
 void menu ()
 {
+    linha('_',120);
     imprime_espaco(49);
-    cout << "MENU DAS FUNÇÕES" << endl << endl;
+    cout << "MENU DAS FUNÇÕES" << endl;
+    linha('_',120);
+    cout << endl;
     cout << "(01) Desenha retângulo";
     imprime_espaco(55);
     cout << "(11) Ordenar três números" << endl;
@@ -41,7 +44,8 @@ void menu ()
     cout << "(19) Maior e menor do vetor" << endl;
     cout << "(10) Centralizar texto";
     imprime_espaco(55);
-    cout << "(20) Soma matriz" << endl << endl;
+    cout << "(20) Soma matriz" << endl;
+    linha('_', 120);
 }
 
 void desenha_retangulo(char X, char Y, int L, int C)

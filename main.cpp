@@ -11,6 +11,7 @@ int main ()
     menu();
     cout << "Escolha o número da função para testar: ";
     cin >> N;
+
     while (N!=0)
     {
         system ("cls");
@@ -428,7 +429,11 @@ int main ()
 
         cout << endl;
         menu();
-        cout << "\nEscolha o número da função para testar: ";
+        linha('.', 120);
+        caixa_com_texto_centralizado ("Digite 0 para encerrar o programa", 120, '.');
+        caixa_com_texto_centralizado ("OU", 120, '.');
+        linha('.', 120);
+        caixa_com_texto_centralizado ("Escolha o número da função para testar:", 120, ' ');
         cin >> N;
     }
 

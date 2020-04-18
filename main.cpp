@@ -286,10 +286,10 @@ int main ()
 
            char X[100], Y[100];
            cin.ignore();
-           cout << "String 1: ";
+           cout << "String: ";
            cin.getline(X,100);
 
-           cout << "String 2: ";
+           cout << "Texto para buscar dentro da string: ";
            cin.getline(Y,100);
 
            if (buscar_na_string(X,Y) == -1)
@@ -389,8 +389,14 @@ int main ()
         menu();
 
         cout << endl;
-        caixa_ao_redor_do_texto ('*', "Digite 0 para encerrar o programa", 120);
-        caixa_ao_redor_do_texto ('*', "OU", 120);
+        imprime_espaco(20);
+        linha ('"', 80);
+        imprime_espaco(20);
+        organiza_texto ("Digite 0 para encerrar o programa", 80, '"');
+        imprime_espaco(20);
+        organiza_texto ("ou", 80, '"');
+        imprime_espaco(20);
+        linha ('"', 80);
         imprime_espaco(39);
         cout << "Escolha o número da função para testar: ";
         cin >> N;

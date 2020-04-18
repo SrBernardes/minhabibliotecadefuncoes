@@ -8,17 +8,6 @@ void imprime_espaco (int TAM)
     }
 }
 
-void caixa_ao_redor_do_texto(char Contorno, string T, int TamLinha)
-{
-    int TAM = T.size();
-
-    imprime_espaco((TamLinha - (TAM+2))/2);
-    linha(Contorno, TAM+2);
-    imprime_espaco((TamLinha - (TAM+2))/2);
-    cout << Contorno << T << Contorno << endl;
-    imprime_espaco((TamLinha - (TAM+2))/2);
-    linha(Contorno, TAM+2);
-}
 void menu ()
 {
     caixa_com_texto_centralizado ("MENU DAS FUNÇÕES", 120, '_', '*');
@@ -75,9 +64,8 @@ void desenha_retangulo(char X, char Y, int L, int C)
     }
 }
 
-void caixa_com_texto_centralizado (string S, int N, char C, char Laterais)
+void organiza_texto (string S, int N, char Laterais)
 {
-    linha (C, N);
     int TAM = S.size();
 
     int P = (N-TAM-2)/2;
@@ -107,6 +95,12 @@ void caixa_com_texto_centralizado (string S, int N, char C, char Laterais)
     }
 
     cout << Laterais << endl;
+}
+
+void caixa_com_texto_centralizado (string S, int N, char C, char Laterais)
+{
+    linha (C, N);
+    organiza_texto (S, N, Laterais);
     linha (C, N);
 }
 
@@ -605,11 +599,18 @@ void imprime_matriz (int l, int c, int **Matriz)
 
 void mensagem_de_despedida()
 {
-    caixa_ao_redor_do_texto('x'," MUITO OBRIGADO POR TESTAR AS FUNÇÕES!!! ", 120);
-    caixa_ao_redor_do_texto('x', " Aluno: Samuel Bernardes de Souza ", 120);
-    caixa_ao_redor_do_texto('x'," Matrícula: 20192002800346 ", 120);
-    cout << endl;
-    caixa_ao_redor_do_texto('x', " FIM. ", 120);
+    imprime_espaco(20);
+    linha('x', 80);
+    imprime_espaco(20);
+    organiza_texto("MUITO OBRIGADO POR TESTAR AS FUNÇÕES!!!", 80, 'x');
+    imprime_espaco(20);
+    organiza_texto("Aluno: Samuel Bernardes de Souza", 80, 'x');
+    imprime_espaco(20);
+    organiza_texto ("Matrícula: 20192002800346", 80, 'x');
+    imprime_espaco(20);
+    organiza_texto ("FIM.", 80, 'x');
+    imprime_espaco(20);
+    linha('x', 80);
 }
 
 void limpa_tela()

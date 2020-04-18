@@ -37,6 +37,6 @@ void ler_matriz (int l, int c, int **Matriz);
 int **cria_matriz (int l, int c);
 void mensagem_de_despedida();
 void deleta_matriz_char (int l, char **Matriz);
-void caixa_ao_redor_do_texto(char Contorno, string T, int TamLinha);
+void organiza_texto (string S, int N, char Laterais);
 
 #endif // MINHABIBLIOTECADEFUNCOES_H

@@ -294,42 +294,25 @@ int *converte_string_para_int (char A[], int *TAM)
 
 char* remove_espacos_em_branco_inicio_e_fim (char P[])
 {
-    int i = tamanho_string(P);
+    int TAM = tamanho_string(P), i, j=0;
 
-    if (P[0]!=' ' && P[i-1]!=' ')
+    for (i=0; P[i]==' '; i++);
+    for (int q=TAM-1; P[q]==' '; q--)
     {
-        return P;
+        j++;
     }
 
-    if (P[0]==' ' && P[i-1]==' ')
-    {
-        char *C = new char[i-1];
-        for (int j=0; j<i-2; j++)
-        {
-            C[j] = P[j+1];
-        }
-        C[i-2]='\0';
-        return C;
-    }
+    char *C = new char [TAM-i-j+1];
 
-    else
+    for (int k=i, l=0; k<TAM-j; k++, l++)
     {
-        char *C = new char[i];
-        for (int j=0; j<i-1; j++)
-        {
-            if (P[0]!=' ' && P[i-1]==' ')
-            {
-                C[j] = P[j];
-            }
-            else if (P[0]==' ' && P[i-1]!=' ')
-            {
-                C[j] = P[j+1];
-            }
-        }
-        C[i-1]='\0';
-        return C;
+        C[l] = P[k];
     }
+    C[TAM-i-j] = '\0';
+
+    return C;
 }
+
 
 char** quebrar_string (char* A, char separador, int *QtdSubstr)
 {

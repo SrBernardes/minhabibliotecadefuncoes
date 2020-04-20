@@ -11,6 +11,7 @@ int main ()
     int N;
     menu();
     imprime_espaco(39);
+
     cout << "Escolha o número da função para testar: ";
     cin >> N;
 
@@ -292,14 +293,15 @@ int main ()
            cout << "Texto para buscar dentro da string: ";
            cin.getline(Y,100);
 
-           if (buscar_na_string(X,Y) == -1)
+           int Position = buscar_na_string(X,Y);
+           if (Position == -1)
            {
                cout << "A string " << Y << " não foi encontrada na string " << X << "\n";
            }
            else
            {
             cout << "\nPosição da ocorrência: ";
-            cout << buscar_na_string(X, Y) << endl;
+            cout << Position << endl;
            }
         }
 

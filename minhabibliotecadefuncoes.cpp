@@ -296,10 +296,17 @@ char* remove_espacos_em_branco_inicio_e_fim (char P[])
 {
     int TAM = tamanho_string(P), i, j=0;
 
-    for (i=0; P[i]==' '; i++);
-    for (int q=TAM-1; P[q]==' '; q--)
+    for (i=0; i<TAM && P[i]==' '; i++);
+    for (int q=TAM-1; j<TAM && P[q]==' '; q--)
     {
         j++;
+    }
+
+    if (j==TAM || i==TAM)
+    {
+        char *C  = new char[1];
+        C[0] = '\0';
+        return C;
     }
 
     char *C = new char [TAM-i-j+1];
